@@ -5,6 +5,8 @@
 
 #include <SDL/SDL.h>
 
+#include <ranges>
+
 namespace Lunaria {
 
 	#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -46,12 +48,12 @@ namespace Lunaria {
 		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
 		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
 
-		for (auto it = m_LayerStack.rbegin(); it != m_LayerStack.rend(); ++it)
-		{
+		for (auto& it : std::ranges::reverse_view(m_LayerStack))
+        {
 			if (e.Handled)
 				break;
 
-			(*it)->OnEvent(e);
+            it->OnEvent(e);
 		}
 	}
 
@@ -80,7 +82,7 @@ namespace Lunaria {
 				layer->OnImGuiRender();
 
 			m_ImGuiLayer->End();
-			
+
 			m_Window->OnUpdate();
 		}
 	}
@@ -102,7 +104,7 @@ namespace Lunaria {
 		m_Minimized = false;
 
 		Renderer::OnWindowResize(e.GetWidth(), e.GetHeight());
-		
+
 		return false;
 	}
 }

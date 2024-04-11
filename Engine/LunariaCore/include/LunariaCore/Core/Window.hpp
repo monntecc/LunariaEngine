@@ -67,6 +67,10 @@ namespace Lunaria {
 		virtual void* GetNativeWindow() const = 0;
 		virtual const WindowProps& GetWindowData() const = 0;
 
+	    // Splash screen
+        static void CreateAndShowSplashScreen();
+	    static void HideSplashScreen();
+
 		// Window creation
 		static Scope<Window> Create(const WindowProps& props = WindowProps());
 	};

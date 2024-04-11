@@ -10,6 +10,7 @@ project "LunariaCore"
 
 	targetdir ("%{wks.location}/Binaries/" .. OutputDir .. "/%{prj.name}")
     objdir ("%{wks.location}/Binaries/Intermediates/" .. OutputDir .. "/%{prj.name}")
+    debugdir("%{wks.location}")
 
 	files { "**.hpp", "**.cpp" }
 
@@ -20,8 +21,8 @@ project "LunariaCore"
 
 	libdirs { "%{wks.location}/Libraries" }
 
-	postbuildcommands 
-	{ 
+	postbuildcommands
+	{
 		-- Create editor binaries directory if not exists
 		"{MKDIR} %{wks.location}/Binaries/" .. OutputDir .. "/LunariaEditor",
 
@@ -29,7 +30,7 @@ project "LunariaCore"
 		"{COPY} %{cfg.buildtarget.relpath} %{wks.location}/Binaries/" .. OutputDir .. "/LunariaEditor/",
 
 		-- Copy SDL2 shared library to editor project
-		"{COPY} %{wks.location}/Libraries/SDL2.dll %{wks.location}/Binaries/" .. OutputDir .. "/LunariaEditor/" 
+		"{COPY} %{wks.location}/Libraries/SDL2.dll %{wks.location}/Binaries/" .. OutputDir .. "/LunariaEditor/"
 	}
 
 	filter "system:windows"

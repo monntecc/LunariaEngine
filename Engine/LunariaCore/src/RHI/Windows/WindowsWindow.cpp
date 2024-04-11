@@ -19,7 +19,9 @@ namespace Lunaria {
 
 	static uint32_t s_SDLWindowCount = 0;
 
-	WindowsWindow::WindowsWindow(const WindowProps& props) 
+    static bool s_SplashScreenShown = true;
+
+	WindowsWindow::WindowsWindow(const WindowProps& props)
 		: m_WindowProps(props)
 	{
 		WindowsWindow::Init(props);
@@ -36,16 +38,32 @@ namespace Lunaria {
 		m_Data.Width = props.Width;
 		m_Data.Height = props.Height;
 
+	    // Initialize video subsystem (if needed)
+	    if (SDL_WasInit(SDL_INIT_VIDEO) != 1)
+	    {
+	        if (SDL_InitSubSystem(SDL_INIT_VIDEO) != 0)
+	            LU_CORE_ERROR("Failed to initialise SDL video subsystem: %s.", SDL_GetError());
+	    }
+
+	    // Initialize events subsystem (if needed)
+	    if (SDL_WasInit(SDL_INIT_EVENTS) != 1)
+	    {
+	        if (SDL_InitSubSystem(SDL_INIT_EVENTS) != 0)
+	            LU_CORE_ERROR("Failed to initialise SDL events subsystem: %s.", SDL_GetError());
+	    }
+
+	    // Show splash screen
+	    if (s_SplashScreenShown)
+	        CreateAndShowSplashScreen();
+
 		LU_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
 		if (SDL_Init(SDL_INIT_VIDEO) != 0)
-		{
 			LU_CORE_ERROR("Unable to initialize SDL: {0}", SDL_GetError());
-			return;
-		}
 
 		m_Window = SDL_CreateWindow(props.Title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
 			static_cast<int>(props.Width), static_cast<int>(props.Height), SDL_WINDOW_OPENGL | SDL_WINDOW_BORDERLESS | SDL_WINDOW_RESIZABLE);
+	    SDL_HideWindow(m_Window);
 
 #if defined(LU_DEBUG)
     if (Renderer::GetAPI() == RendererAPI::API::OpenGL)
@@ -68,7 +86,6 @@ namespace Lunaria {
 		SetIcon("Resources/Icons/Logo.png");
 
 		SDL_SetWindowResizable(m_Window, SDL_TRUE);
-		SDL_ShowWindow(m_Window);
 		SDL_SetWindowData(m_Window, "this", this);
 
 		// Hide decorations
@@ -84,8 +101,21 @@ namespace Lunaria {
 			}
 			return 1;
 		}, this);
+
+	    // Hide splash screen
+	    if (s_SplashScreenShown)
+	    {
+            // Wait for a few seconds
+	        std::this_thread::sleep_for(std::chrono::seconds(2));
+
+            s_SplashScreenShown = false;
+            HideSplashScreen();
+
+	        // Show the window
+	        SDL_ShowWindow(m_Window);
+        }
 	}
-	
+
 	void WindowsWindow::Shutdown()
 	{
 		SDL_DestroyWindow(m_Window);
@@ -130,7 +160,7 @@ namespace Lunaria {
 					m_Data.EventCallback(e);
 					break;
 				}
-				default: 
+				default:
 					break;
 				}
 				break;
@@ -216,7 +246,7 @@ namespace Lunaria {
 				m_Data.EventCallback(e);
 				break;
 			}
-			default: 
+			default:
 				break;
 			}
 		}

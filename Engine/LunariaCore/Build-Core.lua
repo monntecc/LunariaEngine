@@ -16,10 +16,10 @@ project "LunariaCore"
 
 	defines { "_CRT_SECURE_NO_WARNINGS", "GLFW_INCLUDE_NONE", "LU_DYNAMIC_LINK", "LU_BUILD_DLL", "IMGUI_DEFINE_MATH_OPERATORS" }
 
-	includedirs { "src", "include", "%{LOCAL.MATH}", "%{LOCAL.ECS}",
+	includedirs { "src", "include", "%{LOCAL.MATH}", "%{LOCAL.ECS}", "%{LOCAL.WINDOW}",
 		"%{INCLUDES.spdlog}", "%{INCLUDES.SDL}", "%{INCLUDES.Glad}", "%{INCLUDES.VulkanSDK}", "%{INCLUDES.ImGui}", "%{INCLUDES.glm}", "%{INCLUDES.stb_image}", "%{INCLUDES.entt}",  "%{INCLUDES.spirv_cross}", "%{INCLUDES.nlohmann}" }
 
-	links { "LunariaMath", "LunariaECS" } -- Link engine local dependencies
+	links { "LunariaMath", "LunariaECS", "LunariaWindowing" } -- Link engine local dependencies
 	libdirs { "%{wks.location}/Libraries" }
 
 	postbuildcommands

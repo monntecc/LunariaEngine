@@ -1,6 +1,9 @@
 #pragma once
 
 #include <memory>
+#include <utility>
+#include <string>
+#include <chrono>
 
 #include "LunariaCore/Global/PlatformDetection.hpp"
 

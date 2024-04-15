@@ -16,4 +16,6 @@ INCLUDES["nlohmann"] = "%{wks.location}/External/nlohmann"
 -- Local Dependencies
 LOCAL = {}
 LOCAL["MATH"] = "%{wks.location}/Engine/LunariaMath/include"
+LOCAL["CORE"] = "%{wks.location}/Engine/LunariaCore/include"
+LOCAL["WINDOW"] = "%{wks.location}/Engine/LunariaWindowing/include"
 LOCAL["ECS"] = "%{wks.location}/Engine/LunariaECS/include"

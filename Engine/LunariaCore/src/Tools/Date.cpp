@@ -1,0 +1,46 @@
+/*
+ * @copyright Copyright(c) 2024 Vladyslav Potapenko. All rights reserved.
+ * @license Licensed under the MIT License. See LICENSE in the project root for license information.
+*/
+
+#include "LunariaCore/Tools/Date.hpp"
+
+#include <ctime>
+
+namespace Lunaria::Tools {
+
+    std::string Date::GetDateAsString()
+    {
+        std::string date;
+        const auto now = time(nullptr);
+        tm ltm;
+
+        localtime_s(&ltm, &now);
+
+        std::string dateData[6] =
+        {
+            std::to_string(1900 + ltm.tm_year),
+            std::to_string(1 + ltm.tm_mon),
+            std::to_string(ltm.tm_mday),
+            std::to_string(ltm.tm_hour),
+            std::to_string(ltm.tm_min),
+            std::to_string(ltm.tm_sec)
+        };
+
+        for (uint8_t i = 1; i < 6; ++i)
+            if (dateData[i].size() < 2)
+                dateData[i].insert(dateData[i].begin(), '0');
+
+        for (uint8_t i = 0; i < 6; ++i)
+        {
+            date += dateData[i];
+            if (i == 2)
+                date += '_';
+            else if (i != 5)
+                date += '-';
+        }
+
+        return date;
+    }
+
+}

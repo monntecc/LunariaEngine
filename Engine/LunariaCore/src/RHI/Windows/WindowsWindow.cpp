@@ -1,6 +1,6 @@
 #include "lepch.hpp"
 
-#include "LunariaCore/Core/Application.hpp"
+#include "LunariaCore/Global/Application.hpp"
 #include "LunariaCore/Events/ApplicationEvent.hpp"
 #include "LunariaCore/Events/KeyEvent.hpp"
 #include "LunariaCore/Events/MouseEvent.hpp"

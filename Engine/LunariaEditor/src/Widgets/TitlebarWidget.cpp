@@ -16,7 +16,7 @@ namespace Lunaria {
 	{
 		const auto& window = Application::Get().GetWindow();
 
-		const float titlebarHeight = 50.0f;
+        constexpr float titlebarHeight = 50.0f;
 		const bool isMaximized = window.IsMaximized();
 		float titlebarVerticalOffset = isMaximized ? -6.0f : 0.0f;
 		const ImVec2 windowPadding = ImGui::GetCurrentWindow()->WindowPadding;
@@ -32,8 +32,8 @@ namespace Lunaria {
 
 		// Logo
 		{
-			const int logoWidth = 32;// m_LogoTex->GetWidth();
-			const int logoHeight = 32; // m_LogoTex->GetHeight();
+			constexpr int logoWidth = 32;// m_LogoTex->GetWidth();
+            constexpr int logoHeight = 32; // m_LogoTex->GetHeight();
 			const ImVec2 logoOffset(16.0f + windowPadding.x, 5.0f + windowPadding.y + titlebarVerticalOffset);
 			const ImVec2 logoRectStart = { ImGui::GetWindowPos().x + logoOffset.x, ImGui::GetWindowPos().y + logoOffset.y };
 			const ImVec2 logoRectMax = { logoRectStart.x + logoWidth, logoRectStart.y + logoHeight };
@@ -45,7 +45,7 @@ namespace Lunaria {
 		static float moveOffsetX;
 		static float moveOffsetY;
 		const float w = ImGui::GetContentRegionAvail().x;
-		const float buttonsAreaWidth = 94;
+		constexpr float buttonsAreaWidth = 94;
 
 		// Title bar drag area
 		// On Windows we hook into the GLFW win32 window internals
@@ -94,20 +94,19 @@ namespace Lunaria {
 		}
 
 		// Window buttons
-		const ImU32 buttonColN = UI::Colors::ColorWithMultipliedValue(IM_COL32(192, 192, 192, 255), 0.9f);
-		const ImU32 buttonColH = UI::Colors::ColorWithMultipliedValue(IM_COL32(192, 192, 192, 255), 1.2f);
-		const ImU32 buttonColP = IM_COL32(128, 128, 128, 255);
-		const float buttonWidth = 14.0f;
-		const float buttonHeight = 14.0f;
+        const ImU32 buttonColN = UI::Colors::ColorWithMultipliedValue(IM_COL32(192, 192, 192, 255), 0.9f);
+        const ImU32 buttonColH = UI::Colors::ColorWithMultipliedValue(IM_COL32(192, 192, 192, 255), 1.2f);
+        constexpr ImU32 buttonColP = IM_COL32(128, 128, 128, 255);
+        constexpr float buttonWidth = 14.0f;
+        constexpr float buttonHeight = 14.0f;
 
 		// Minimize Button
 
 		ImGui::Spring();
 		UI::ShiftCursorY(8.0f);
 		{
-			const int iconWidth = m_IconMinimize->GetWidth();
-			const int iconHeight = m_IconMinimize->GetHeight();
-			const float padY = (buttonHeight - (float)iconHeight) / 2.0f;
+			const int iconHeight = static_cast<int>(m_IconMinimize->GetHeight());
+			const float padY = (buttonHeight - static_cast<float>(iconHeight)) / 2.0f;
 			if (ImGui::InvisibleButton("Minimize", ImVec2(buttonWidth, buttonHeight)))
 			{
 				window.Minimize();
@@ -120,11 +119,6 @@ namespace Lunaria {
 		ImGui::Spring(-1.0f, 17.0f);
 		UI::ShiftCursorY(8.0f);
 		{
-			const int iconWidth = m_IconMaximize->GetWidth();
-			const int iconHeight = m_IconMaximize->GetHeight();
-
-			const bool isMaximized = window.IsMaximized();
-
 			if (ImGui::InvisibleButton("Maximize", ImVec2(buttonWidth, buttonHeight)))
 			{
 				window.Maximize(isMaximized);
@@ -137,8 +131,6 @@ namespace Lunaria {
 		ImGui::Spring(-1.0f, 15.0f);
 		UI::ShiftCursorY(8.0f);
 		{
-			const int iconWidth = m_IconClose->GetWidth();
-			const int iconHeight = m_IconClose->GetHeight();
 			if (ImGui::InvisibleButton("Close", ImVec2(buttonWidth, buttonHeight)))
 				Application::Get().Shutdown();
 

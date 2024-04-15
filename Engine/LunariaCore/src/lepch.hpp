@@ -1,6 +1,6 @@
 #pragma once
 
-#include "LunariaCore/Core/PlatformDetection.hpp"
+#include "LunariaCore/Global/PlatformDetection.hpp"
 
 #ifdef LU_PLATFORM_WINDOWS
 #ifndef NOMINMAX
@@ -22,8 +22,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
-#include "LunariaCore/Core/Base.hpp"
-#include "LunariaCore/Core/Log.hpp"
+#include "LunariaCore/Global/Base.hpp"
+#include "LunariaCore/Global/Log.hpp"
 
 #ifdef LU_PLATFORM_WINDOWS
 	#include <Windows.h>

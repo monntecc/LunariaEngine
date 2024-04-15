@@ -1,7 +1,7 @@
 #include "lepch.hpp"
 
-#include "LunariaCore/Core/Input.hpp"
-#include "LunariaCore/Core/Application.hpp"
+#include "LunariaCore/Global/Input.hpp"
+#include "LunariaCore/Global/Application.hpp"
 
 #include <SDL/SDL.h>
 

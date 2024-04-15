@@ -18,7 +18,7 @@ namespace Lunaria {
 		m_Context = context;
 	}
 
-	void SceneHierarchyPanel::OnImGuiRender()
+	void SceneHierarchyPanel::Draw()
 	{
 		ImGui::Begin("Scene Hierarchy");
 

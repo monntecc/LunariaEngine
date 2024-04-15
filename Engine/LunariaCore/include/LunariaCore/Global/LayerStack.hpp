@@ -1,7 +1,7 @@
 #pragma once
 
-#include "LunariaCore/Core/Base.hpp"
-#include "LunariaCore/Core/Layer.hpp"
+#include "LunariaCore/Global/Base.hpp"
+#include "LunariaCore/Global/Layer.hpp"
 
 namespace Lunaria {
 

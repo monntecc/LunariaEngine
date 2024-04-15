@@ -8,7 +8,7 @@ project "LunariaEditor"
     objdir ("%{wks.location}/Binaries/Intermediates/" .. OutputDir .. "/%{prj.name}")
 	debugdir ("%{wks.location}/Binaries/" .. OutputDir .. "/%{prj.name}") -- Set the working directory for the debugger
 
-	files { "**.cpp", "**.hpp" }
+	files { "**.cpp", "**.hpp", "LunariaEditor.rc", "resource.h", "favicon.ico" }
 
 	includedirs { "include", "%{wks.location}/Engine/LunariaCore/src", "%{wks.location}/Engine/LunariaCore/include",
 		"%{INCLUDES.spdlog}", "%{INCLUDES.ImGui}", "%{INCLUDES.SDL}", "%{INCLUDES.entt}", "%{INCLUDES.glm}" }

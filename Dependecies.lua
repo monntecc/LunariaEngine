@@ -11,3 +11,9 @@ INCLUDES["glm"] = "%{wks.location}/External/glm"
 INCLUDES["entt"] = "%{wks.location}/External/entt"
 INCLUDES["SDL"] = "%{wks.location}/External/SDL"
 INCLUDES["VulkanSDK"] = "%{wks.location}/External/VulkanSDK"
+INCLUDES["nlohmann"] = "%{wks.location}/External/nlohmann"
+
+-- Local Dependencies
+LOCAL = {}
+LOCAL["MATH"] = "%{wks.location}/Engine/LunariaMath/include"
+LOCAL["ECS"] = "%{wks.location}/Engine/LunariaECS/include"

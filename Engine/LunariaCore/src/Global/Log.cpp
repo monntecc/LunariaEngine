@@ -1,6 +1,6 @@
 #include "lepch.hpp"
 
-#include "LunariaCore/Core/Log.hpp"
+#include "LunariaCore/Global/Log.hpp"
 
 #pragma warning(push, 3) 
 #include <spdlog/sinks/stdout_color_sinks.h>

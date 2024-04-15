@@ -1,6 +1,6 @@
 #include "lepch.hpp"
 
-#include "LunariaCore/Core/Application.hpp"
+#include "LunariaCore/Global/Application.hpp"
 
 #include "LunariaCore/UI/ImGuiLayer.hpp"
 #include "LunariaCore/UI/ImGuiTheme.hpp"

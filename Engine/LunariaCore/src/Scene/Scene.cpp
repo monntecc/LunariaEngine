@@ -4,10 +4,11 @@
 
 #include "LunariaCore/Scene/Entity.hpp"
 #include "LunariaCore/Scene/Components.hpp"
-
 #include "LunariaCore/Renderer/Renderer2D.hpp"
 
-#include <assert.h>
+#include "LunariaCore/Scene/JsonTypes.hpp"
+
+using json = nlohmann::json;
 
 namespace Lunaria {
 
@@ -105,7 +106,34 @@ namespace Lunaria {
 
 	}
 
-	template<typename T>
+    void to_json(nlohmann::json& j, const Scene& scene)
+    {
+        std::vector<Entity> entities;
+
+        scene.m_Registry.each([&](auto entityID)
+            {
+                Entity entity = { entityID, &const_cast<Scene&>(scene) };
+                if (!entity)
+                    return;
+                entities.push_back(entity);
+            });
+
+        j = json{
+            { "Scene", "12345" }, // TODO: Scene ID goes here
+            { "Entities", entities }
+        };
+    }
+
+    void from_json(const nlohmann::json& j, Scene& scene)
+    {
+        for (auto& entity : j.at("Entities"))
+        {
+            Entity newEntity = scene.CreateEntity(entity.at("TagComponent").at("Tag").get<std::string>());
+            entity.get_to(newEntity);
+        }
+    }
+
+    template<typename T>
 	void Scene::OnComponentAdded(Entity entity, T& component)
 	{
 		static_assert(sizeof(T) == 0);

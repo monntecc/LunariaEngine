@@ -13,4 +13,6 @@ workspace "LunariaEngine"
 OutputDir = "%{cfg.system}/%{cfg.architecture}/%{cfg.buildcfg}"
 
 include "Engine/LunariaCore/Build-Core.lua"
+include "Engine/LunariaMath/Build-Math.lua"
+include "Engine/LunariaECS/Build-ECS.lua"
 include "Engine/LunariaEditor/Build-Editor.lua"

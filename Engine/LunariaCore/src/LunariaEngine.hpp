@@ -2,19 +2,19 @@
 
 // For use by Lunaria applications
 
-#include "LunariaCore/Core/Base.hpp"
+#include "LunariaCore/Global/Base.hpp"
 
-#include "LunariaCore/Core/Application.hpp"
-#include "LunariaCore/Core/Layer.hpp"
-#include "LunariaCore/Core/Log.hpp"
-#include "LunariaCore/Core/Input.hpp"
-#include "LunariaCore/Core/Assert.hpp"
+#include "LunariaCore/Global/Application.hpp"
+#include "LunariaCore/Global/Layer.hpp"
+#include "LunariaCore/Global/Log.hpp"
+#include "LunariaCore/Global/Input.hpp"
+#include "LunariaCore/Global/Assert.hpp"
 
 #include "LunariaCore/UI/ImGuiLayer.hpp"
 #include "LunariaCore/UI/UI.hpp"
 #include "LunariaCore/UI/ImGuiTheme.hpp"
 
-#include "LunariaCore/Core/Timestep.hpp"
+#include "LunariaCore/Global/Timestep.hpp"
 
 // ------------------- Scene -------------------
 #include "LunariaCore/Scene/Scene.hpp"
@@ -40,9 +40,9 @@
 // ------------------------------------------------
 
 // ------------ KeyCodes ------------
-#include "LunariaCore/Core/MouseCodes.hpp"
+#include "LunariaCore/Global/MouseCodes.hpp"
 #include "LunariaCore/Events/MouseEvent.hpp"
 #include "LunariaCore/Events/ApplicationEvent.hpp"
 #include "LunariaCore/Events/KeyEvent.hpp"
-#include "LunariaCore/Core/KeyCodes.hpp"
+#include "LunariaCore/Global/KeyCodes.hpp"
 // ----------------------------------

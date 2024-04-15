@@ -186,7 +186,7 @@ namespace Lunaria {
         ImGui::SaveIniSettingsToDisk("Resources/EditorLayout.rf");
 
         // Scene Hierarchy panel
-        m_SceneHierarchyPanel.OnImGuiRender();
+        m_SceneHierarchyPanel.Draw();
 
         // Statistics panel
         m_StatisticPanel.Draw();

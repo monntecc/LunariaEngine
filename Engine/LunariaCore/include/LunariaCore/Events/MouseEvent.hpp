@@ -1,6 +1,6 @@
 #pragma once
 
-#include "LunariaCore/Core/MouseCodes.hpp"
+#include "LunariaCore/Global/MouseCodes.hpp"
 #include "LunariaCore/Events/Event.hpp"
 
 namespace Lunaria {

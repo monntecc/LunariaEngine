@@ -1,7 +1,5 @@
 #pragma once
 
-#include "LunariaCore/Renderer/Camera.hpp"
-
 #include "LunariaCore/Scene/SceneCamera.hpp"
 #include "LunariaCore/Scene/ScriptableEntity.hpp"
 

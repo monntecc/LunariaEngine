@@ -1,6 +1,6 @@
 #include "lepch.hpp"
 
-#include "LunariaCore/Core/LayerStack.hpp"
+#include "LunariaCore/Global/LayerStack.hpp"
 
 namespace Lunaria {
 

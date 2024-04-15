@@ -3,6 +3,7 @@
 #include "LunariaCore/Scene/Scene.hpp"
 
 #include <entt/entt.hpp>
+#include <nlohmann/json.hpp>
 
 namespace Lunaria {
 
@@ -59,5 +60,8 @@ namespace Lunaria {
 		entt::entity m_EntityHandle{ entt::null };
 		Scene* m_Scene = nullptr;
 	};
+
+    static void to_json(nlohmann::json& j, const Entity& entity);
+    static void from_json(const nlohmann::json& j, Entity& entity);
 
 }

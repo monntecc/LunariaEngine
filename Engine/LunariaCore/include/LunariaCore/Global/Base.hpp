@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include "LunariaCore/Core/PlatformDetection.hpp"
+#include "LunariaCore/Global/PlatformDetection.hpp"
 
 #ifndef LU_DEBUG
 	#define LU_ENABLE_ASSERTS 1
@@ -37,5 +37,5 @@ namespace Lunaria {
 	
 }
 
-#include "LunariaCore/Core/Log.hpp"
-#include "LunariaCore/Core/Assert.hpp"
+#include "LunariaCore/Global/Log.hpp"
+#include "LunariaCore/Global/Assert.hpp"

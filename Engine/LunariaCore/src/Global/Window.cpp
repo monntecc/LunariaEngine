@@ -1,6 +1,6 @@
 ﻿#include "lepch.hpp"
 
-#include "LunariaCore/Core/Window.hpp"
+#include "LunariaCore/Global/Window.hpp"
 
 #ifdef LU_PLATFORM_WINDOWS
     #include "LunariaCore/RHI/Windows/WindowsWindow.hpp"

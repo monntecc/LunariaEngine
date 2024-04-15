@@ -1,6 +1,6 @@
 #pragma once
 
-#include "LunariaCore/Core/Layer.hpp"
+#include "LunariaCore/Global/Layer.hpp"
 
 namespace Lunaria {
 	

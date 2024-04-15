@@ -12,7 +12,7 @@ namespace Lunaria {
 
 		void SetContext(const Ref<Scene>& scene);
 
-		void OnImGuiRender();
+		void Draw();
 	private:
 		void DrawEntityNode(Entity entity);
 		void DrawComponents(Entity entity);

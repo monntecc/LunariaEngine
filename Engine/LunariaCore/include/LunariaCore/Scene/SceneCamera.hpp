@@ -4,6 +4,8 @@
 
 #include "LunariaCore/Renderer/Camera.hpp"
 
+namespace Lunaria::ECS::Components { class ACamera; }
+
 namespace Lunaria {
 
 	class LUNARIA_API SceneCamera : public Camera
@@ -49,6 +51,8 @@ namespace Lunaria {
 		float m_OrthographicNear = -1.0f, m_OrthographicFar = 1.0f;
 
 		float m_AspectRatio = 0.0f;
+
+        friend class ACamera;
 	};
 
 }

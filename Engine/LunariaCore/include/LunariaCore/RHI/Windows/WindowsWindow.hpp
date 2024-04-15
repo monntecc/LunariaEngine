@@ -1,7 +1,7 @@
 #pragma once
 
-#include "LunariaCore/Core/Base.hpp"
-#include "LunariaCore/Core/Window.hpp"
+#include "LunariaCore/Global/Base.hpp"
+#include "LunariaCore/Global/Window.hpp"
 #include "LunariaCore/Renderer/GraphicsContext.hpp"
 
 #include <SDL/SDL.h>

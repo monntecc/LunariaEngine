@@ -1,6 +1,6 @@
 #pragma once
 
-#include "LunariaCore/Core/Base.hpp"
+#include "LunariaCore/Global/Base.hpp"
 
 #include <functional>
 

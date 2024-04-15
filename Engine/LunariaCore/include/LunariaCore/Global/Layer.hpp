@@ -1,7 +1,7 @@
 #pragma once
 
-#include "LunariaCore/Core/Base.hpp"
-#include "LunariaCore/Core/Timestep.hpp"
+#include "LunariaCore/Global/Base.hpp"
+#include "LunariaCore/Global/Timestep.hpp"
 
 #include "LunariaCore/Events/Event.hpp"
 

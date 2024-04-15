@@ -1,8 +1,8 @@
 #pragma once
 
-#include "LunariaCore/Core/Base.hpp"
-#include "LunariaCore/Core/Window.hpp"
-#include "LunariaCore/Core/LayerStack.hpp"
+#include "LunariaCore/Global/Base.hpp"
+#include "LunariaCore/Global/Window.hpp"
+#include "LunariaCore/Global/LayerStack.hpp"
 
 #include "LunariaCore/Events/ApplicationEvent.hpp"
 #include "LunariaCore/Events/Event.hpp"

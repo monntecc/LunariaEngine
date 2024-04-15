@@ -1,7 +1,7 @@
 #pragma once
 
-#include "LunariaCore/Core/Base.hpp"
-#include "LunariaCore/Core/Log.hpp"
+#include "LunariaCore/Global/Base.hpp"
+#include "LunariaCore/Global/Log.hpp"
 
 #include <filesystem>
 

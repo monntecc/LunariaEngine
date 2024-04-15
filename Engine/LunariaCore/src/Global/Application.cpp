@@ -1,6 +1,6 @@
 #include "lepch.hpp"
 
-#include "LunariaCore/Core/Application.hpp"
+#include "LunariaCore/Global/Application.hpp"
 #include "LunariaCore/Renderer/Renderer.hpp"
 
 #include <SDL/SDL.h>

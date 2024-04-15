@@ -1,9 +1,9 @@
 #pragma once
 
-#include "LunariaCore/Core/Base.hpp"
+#include "LunariaCore/Global/Base.hpp"
 
-#include "LunariaCore/Core/KeyCodes.hpp"
-#include "LunariaCore/Core/MouseCodes.hpp"
+#include "LunariaCore/Global/KeyCodes.hpp"
+#include "LunariaCore/Global/MouseCodes.hpp"
 
 #include <glm/glm.hpp>
 

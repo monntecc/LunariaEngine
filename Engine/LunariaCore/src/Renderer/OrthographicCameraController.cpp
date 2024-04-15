@@ -2,8 +2,8 @@
 
 #include "LunariaCore/Renderer/OrthographicCameraController.hpp"
 
-#include "LunariaCore/Core/Input.hpp"
-#include "LunariaCore/Core/KeyCodes.hpp"
+#include "LunariaCore/Global/Input.hpp"
+#include "LunariaCore/Global/KeyCodes.hpp"
 
 namespace Lunaria
 {

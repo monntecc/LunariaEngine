@@ -2,7 +2,7 @@
 
 #include "LunariaCore/Events/Event.hpp"
 
-#include "LunariaCore/Core/KeyCodes.hpp"
+#include "LunariaCore/Global/KeyCodes.hpp"
 
 namespace Lunaria {
 

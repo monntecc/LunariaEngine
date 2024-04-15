@@ -1,6 +1,6 @@
 ﻿#pragma once
 
-#include "LunariaCore/Core/Timestep.hpp"
+#include "LunariaCore/Global/Timestep.hpp"
 
 #include "LunariaCore/Events/Event.hpp"
 #include "LunariaCore/Events/ApplicationEvent.hpp"
